@@ -1,0 +1,445 @@
+/* =========================================================
+   ARCA RETRÔ — APP
+   Cabeçalho, navegação e rodapé
+========================================================= */
+
+
+/* =========================================================
+   CONFIGURAÇÃO GERAL
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+:host {
+  display: block;
+  min-height: 100vh;
+  background: #0c0804;
+  color: #ede0cc;
+}
+
+
+/* =========================================================
+   CABEÇALHO
+========================================================= */
+
+.header {
+  width: 100%;
+  background: #080503;
+  border-bottom: 1px solid #24180f;
+
+  position: relative;
+  z-index: 20;
+}
+
+.header-conteudo {
+  width: 100%;
+  max-width: 1400px;
+  min-height: 105px;
+
+  margin: 0 auto;
+  padding: 0 3%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 40px;
+
+  background: #080503;
+}
+
+
+/* =========================================================
+   MARCA
+========================================================= */
+
+.brand {
+  display: flex;
+  align-items: center;
+
+  gap: 16px;
+
+  color: #ede0cc;
+  text-decoration: none;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   CÍRCULO DO LOGO
+========================================================= */
+
+.logo-circulo {
+  width: 78px;
+  height: 78px;
+
+  border: 1px solid #cfa454;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+  flex-shrink: 0;
+
+  background: #080503;
+}
+
+.logo-circulo img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+
+/* =========================================================
+   TEXTO DO LOGO
+========================================================= */
+
+.brand-texto {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  line-height: 1;
+}
+
+
+/* ARCA */
+
+.nome-arca {
+  color: #ede0cc;
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+
+  font-size: 2rem;
+  font-weight: 500;
+
+  letter-spacing: 3px;
+}
+
+
+/* RETRÔ */
+
+.nome-retro {
+  margin-top: 6px;
+
+  color: #cfa454;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 0.65rem;
+
+  letter-spacing: 5px;
+}
+
+
+/* EST. 1970 */
+
+.est {
+  margin-top: 9px;
+
+  color: #8f806d;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 0.5rem;
+
+  letter-spacing: 3px;
+}
+
+
+/* =========================================================
+   NAVEGAÇÃO
+========================================================= */
+
+.navegacao {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+}
+
+.nav-link {
+  position: relative;
+
+  padding: 12px 16px;
+
+  color: #8f806d;
+
+  text-decoration: none;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 0.85rem;
+
+  letter-spacing: 1px;
+
+  transition:
+    color 0.3s ease,
+    background 0.3s ease;
+}
+
+
+/* HOVER */
+
+.nav-link:hover {
+  color: #cfa454;
+}
+
+
+/* LINHA DOURADA */
+
+.nav-link::after {
+  content: "";
+
+  position: absolute;
+
+  left: 16px;
+  right: 16px;
+
+  bottom: 3px;
+
+  height: 1px;
+
+  background: #cfa454;
+
+  transform: scaleX(0);
+
+  transform-origin: center;
+
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+
+/* =========================================================
+   CESTA
+========================================================= */
+
+.cesta-link {
+  margin-left: 8px;
+
+  border: 1px solid #4a351e;
+
+  color: #cfa454;
+
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.cesta-link:hover {
+  background: #cfa454;
+
+  color: #080503;
+}
+
+.cesta-link:hover::after {
+  display: none;
+}
+
+
+/* =========================================================
+   CONTEÚDO DAS PÁGINAS
+========================================================= */
+
+router-outlet {
+  display: none;
+}
+
+
+/* =========================================================
+   RODAPÉ
+========================================================= */
+
+.footer {
+  width: 100%;
+
+  margin-top: 80px;
+
+  background: #080503;
+
+  border-top: 1px solid #24180f;
+}
+
+.footer-conteudo {
+  width: 100%;
+  max-width: 1250px;
+
+  margin: 0 auto;
+
+  padding: 55px 7% 40px;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   MARCA DO RODAPÉ
+========================================================= */
+
+.footer-marca span {
+  color: #cfa454;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 0.75rem;
+
+  letter-spacing: 5px;
+}
+
+.footer-marca p {
+  margin: 12px 0 0;
+
+  color: #ede0cc;
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+
+  font-size: 1.4rem;
+}
+
+
+/* =========================================================
+   LINHA DECORATIVA
+========================================================= */
+
+.footer-linha {
+  width: 60px;
+  height: 1px;
+
+  margin: 25px auto;
+
+  background: #4a351e;
+}
+
+
+/* =========================================================
+   DESCRIÇÃO
+========================================================= */
+
+.footer-descricao {
+  max-width: 500px;
+
+  margin: 0 auto;
+
+  color: #75695b;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 0.65rem;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   INFORMAÇÕES
+========================================================= */
+
+.footer-info {
+  margin-top: 25px;
+
+  color: #514335;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 0.58rem;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   RESPONSIVO — TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+  .header-conteudo {
+    min-height: auto;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    flex-direction: column;
+
+    gap: 20px;
+  }
+
+  .navegacao {
+    width: 100%;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVO — CELULAR
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .header-conteudo {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .brand {
+    gap: 12px;
+  }
+
+  .logo-circulo {
+    width: 65px;
+    height: 65px;
+  }
+
+  .nome-arca {
+    font-size: 1.6rem;
+  }
+
+  .nome-retro {
+    font-size: 0.55rem;
+    letter-spacing: 4px;
+  }
+
+  .est {
+    font-size: 0.45rem;
+  }
+
+  .navegacao {
+    gap: 2px;
+  }
+
+  .nav-link {
+    padding: 9px 8px;
+
+    font-size: 0.58rem;
+  }
+
+  .cesta-link {
+    margin-left: 0;
+
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .footer-conteudo {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+}

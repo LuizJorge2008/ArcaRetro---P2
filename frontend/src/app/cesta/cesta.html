@@ -1,0 +1,250 @@
+<main class="cesta">
+
+    <!-- TOPO -->
+
+    <section class="cesta-topo">
+
+        <a
+            routerLink="/vitrine"
+            class="voltar"
+        >
+            ← Voltar para a coleção
+        </a>
+
+        <span class="titulo-pequeno">
+            ARCA RETRÔ
+        </span>
+
+    </section>
+
+
+    <!-- CABEÇALHO -->
+
+    <section class="cabecalho-cesta">
+
+        <span>
+            CESTA
+        </span>
+
+        <h1>
+            Suas peças selecionadas.
+        </h1>
+
+        <p>
+            Confira os objetos que você escolheu
+            antes de finalizar sua compra.
+        </p>
+
+    </section>
+
+
+    <!-- CESTA VAZIA -->
+
+    <section
+        class="cesta-vazia"
+        *ngIf="cestaService.produtos.length === 0"
+    >
+
+        <div class="simbolo">
+            ◇
+        </div>
+
+        <h2>
+            Sua cesta está vazia.
+        </h2>
+
+        <p>
+            Ainda não há peças selecionadas.
+        </p>
+
+        <a
+            routerLink="/vitrine"
+            class="btn-continuar"
+        >
+            Explorar coleção
+        </a>
+
+    </section>
+
+
+    <!-- PRODUTOS -->
+
+    <section
+        class="conteudo-cesta"
+        *ngIf="cestaService.produtos.length > 0"
+    >
+
+        <div class="lista-produtos">
+
+            <article
+                class="produto-cesta"
+                *ngFor="let produto of cestaService.produtos"
+            >
+
+                <!-- IMAGEM -->
+
+                <div class="imagem-produto">
+
+                    <img
+                        [src]="'/' + produto.imagem"
+                        [alt]="produto.nome"
+                    >
+
+                </div>
+
+
+                <!-- INFORMAÇÕES -->
+
+                <div class="informacoes-produto">
+
+                    <span class="categoria">
+                        {{ produto.categoria }}
+                    </span>
+
+                    <h2>
+                        {{ produto.nome }}
+                    </h2>
+
+                    <p class="codigo">
+                        PEÇA Nº {{ produto.codigo }}
+                    </p>
+
+                    <div class="preco">
+                        R$ {{ produto.valorPromo | number:'1.2-2' }}
+                    </div>
+
+                </div>
+
+
+                <!-- QUANTIDADE -->
+
+                <div class="controle">
+
+                    <span>
+                        Quantidade
+                    </span>
+
+                    <div class="quantidade">
+
+                        <button
+                            type="button"
+                            (click)="diminuirQuantidade(produto.codigo)"
+                        >
+                            −
+                        </button>
+
+                        <strong>
+                            {{ produto.quantidade }}
+                        </strong>
+
+                        <button
+                            type="button"
+                            (click)="aumentarQuantidade(produto.codigo)"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SUBTOTAL -->
+
+                <div class="subtotal">
+
+                    <span>
+                        Subtotal
+                    </span>
+
+                    <strong>
+                        R$
+                        {{
+                            produto.valorPromo * produto.quantidade
+                            | number:'1.2-2'
+                        }}
+                    </strong>
+
+                </div>
+
+
+                <!-- REMOVER -->
+
+                <button
+                    type="button"
+                    class="remover"
+                    (click)="removerProduto(produto.codigo)"
+                >
+                    Remover
+                </button>
+
+            </article>
+
+        </div>
+
+
+        <!-- RESUMO -->
+
+        <aside class="resumo">
+
+            <span class="resumo-titulo">
+                RESUMO DO PEDIDO
+            </span>
+
+
+            <div class="linha-resumo">
+
+                <span>
+                    Subtotal
+                </span>
+
+                <strong>
+                    R$ {{ calcularSubtotal() | number:'1.2-2' }}
+                </strong>
+
+            </div>
+
+
+            <div class="linha-resumo">
+
+                <span>
+                    Frete
+                </span>
+
+                <strong>
+                    R$ {{ calcularFrete() | number:'1.2-2' }}
+                </strong>
+
+            </div>
+
+
+            <div class="linha"></div>
+
+
+            <div class="total">
+
+                <span>
+                    Total
+                </span>
+
+                <strong>
+                    R$ {{ calcularTotal() | number:'1.2-2' }}
+                </strong>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="btn-finalizar"
+                [disabled]="finalizando"
+                (click)="finalizarCompra()"
+            >
+                {{ finalizando ? 'Registrando pedido...' : 'Finalizar compra' }}
+            </button>
+
+        </aside>
+
+    </section>
+
+</main>

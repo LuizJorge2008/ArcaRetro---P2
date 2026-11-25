@@ -1,0 +1,293 @@
+
+<main class="paginaPedidos">
+
+  <section class="cabecalhoPedidos">
+    <span class="pequenoTitulo">MINHA CONTA</span>
+
+    <h1>Meus pedidos</h1>
+
+    <p>
+      Consulte seus pedidos, acompanhe o andamento das entregas
+      e veja os produtos adquiridos.
+    </p>
+  </section>
+
+  <section class="pedidos">
+
+    <!-- CARREGAMENTO -->
+
+    <div class="semPedidos" *ngIf="carregando">
+      <h2>Carregando pedidos...</h2>
+      <p>Aguarde enquanto buscamos suas compras.</p>
+    </div>
+
+    <!-- MENSAGEM DE ERRO OU LOGIN -->
+
+    <div class="semPedidos" *ngIf="!carregando && mensagem">
+
+      <div class="iconeVazio">◇</div>
+
+      <h2>Não foi possível exibir os pedidos</h2>
+
+      <p>{{ mensagem }}</p>
+
+      <a routerLink="/login" class="botaoComprar">
+        Fazer login
+      </a>
+
+    </div>
+
+    <!-- LISTA DE PEDIDOS -->
+
+    <div
+      class="pedidoCard"
+      *ngFor="let pedido of pedidos"
+    >
+
+      <div class="pedidoTopo">
+
+        <div>
+          <span class="label">PEDIDO</span>
+          <strong>{{ pedido.codigo }}</strong>
+        </div>
+
+        <div>
+          <span class="label">DATA</span>
+          <strong>{{ pedido.data }}</strong>
+        </div>
+
+        <div class="statusContainer">
+
+          <span class="label">STATUS</span>
+
+          <span
+            class="status"
+            [ngClass]="{
+              'entregue': pedido.status === 'Entregue',
+              'preparacao': pedido.status === 'Em preparação'
+                || pedido.status === 'Pendente',
+              'caminho': pedido.status === 'A caminho'
+            }"
+          >
+            {{ pedido.status }}
+          </span>
+
+        </div>
+
+      </div>
+
+      <!-- PRODUTOS DO PEDIDO -->
+
+      <div class="produtosPedido">
+
+        <div
+          class="produtoPedido"
+          *ngFor="let produto of pedido.produtos"
+        >
+
+          <img
+            *ngIf="produto.imagem"
+            [src]="produto.imagem"
+            [alt]="produto.nome"
+          >
+
+          <span *ngIf="!produto.imagem">
+            Imagem indisponível
+          </span>
+
+          <div class="produtoInformacoes">
+
+            <h2>{{ produto.nome }}</h2>
+
+            <span>
+              Quantidade: {{ produto.quantidade }}
+            </span>
+
+            <strong>
+              R$ {{ produto.valor.toFixed(2).replace('.', ',') }}
+            </strong>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- RODAPÉ DO PEDIDO -->
+
+      <div class="pedidoRodape">
+
+        <div class="totalPedido">
+
+          <span>Total do pedido</span>
+
+          <strong>
+            {{
+              pedido.total !== null
+                ? 'R$ ' + pedido.total.toFixed(2).replace('.', ',')
+                : 'Não informado'
+            }}
+          </strong>
+
+        </div>
+
+        <button
+          type="button"
+          class="botaoDetalhes"
+          (click)="visualizarPedido(pedido)"
+        >
+          Ver pedido
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- NENHUM PEDIDO -->
+
+    <div
+      class="semPedidos"
+      *ngIf="!carregando && !mensagem && pedidos.length === 0"
+    >
+
+      <div class="iconeVazio">◇</div>
+
+      <h2>Nenhum pedido encontrado</h2>
+
+      <p>
+        Você ainda não realizou nenhum pedido.
+      </p>
+
+      <a
+        routerLink="/vitrine"
+        class="botaoComprar"
+      >
+        Explorar coleção
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- CONTINUAR COMPRANDO -->
+
+  <section class="continuarComprando">
+
+    <p>
+      Procurando alguma peça especial?
+    </p>
+
+    <a
+      routerLink="/vitrine"
+      class="botaoColecao"
+    >
+      Continuar comprando
+    </a>
+
+  </section>
+
+  <!-- JANELA DE DETALHES -->
+
+  <div
+    class="fundoModal"
+    *ngIf="pedidoSelecionado as pedidoDetalhe"
+    (click)="fecharDetalhes()"
+  >
+
+    <div
+      class="modalPedido"
+      (click)="$event.stopPropagation()"
+    >
+
+      <button
+        type="button"
+        class="fechar"
+        (click)="fecharDetalhes()"
+      >
+        ×
+      </button>
+
+      <span class="pequenoTitulo">
+        DETALHES DO PEDIDO
+      </span>
+
+      <h2>{{ pedidoDetalhe.codigo }}</h2>
+
+      <div class="linhaDetalhe">
+
+        <span>Data</span>
+
+        <strong>
+          {{ pedidoDetalhe.data }}
+        </strong>
+
+      </div>
+
+      <div class="linhaDetalhe">
+
+        <span>Status</span>
+
+        <strong>
+          {{ pedidoDetalhe.status }}
+        </strong>
+
+      </div>
+
+      <!-- PRODUTOS DO MODAL -->
+
+      <div class="listaProdutosModal">
+
+        <div
+          class="produtoModal"
+          *ngFor="let produto of pedidoDetalhe.produtos"
+        >
+
+          <img
+            *ngIf="produto.imagem"
+            [src]="produto.imagem"
+            [alt]="produto.nome"
+          >
+
+          <span *ngIf="!produto.imagem">
+            Imagem indisponível
+          </span>
+
+          <div>
+
+            <strong>{{ produto.nome }}</strong>
+
+            <span>
+              Quantidade: {{ produto.quantidade }}
+            </span>
+
+            <span>
+              R$ {{ produto.valor.toFixed(2).replace('.', ',') }}
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- TOTAL DO PEDIDO -->
+
+      <div class="totalModal">
+
+        <span>Total</span>
+
+        <strong>
+          {{
+            pedidoDetalhe.total !== null
+              ? 'R$ ' + pedidoDetalhe.total.toFixed(2).replace('.', ',')
+              : 'Não informado'
+          }}
+        </strong>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</main>

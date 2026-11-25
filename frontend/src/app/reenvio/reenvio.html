@@ -1,0 +1,98 @@
+<main class="reenvio">
+
+    <section class="cartaoReenvio">
+
+        <!-- MARCA -->
+
+        <div class="marca">
+            ARCA RETRÔ
+        </div>
+
+
+        <!-- CABEÇALHO -->
+
+        <div class="cabecalho">
+
+            <span class="numero">
+                01
+            </span>
+
+            <span class="pequenoTitulo">
+                RECUPERAÇÃO DE ACESSO
+            </span>
+
+            <h1>
+                Esqueceu sua senha?
+            </h1>
+
+            <p>
+                Informe o e-mail utilizado no seu cadastro.
+                Enviaremos instruções para recuperar o acesso à sua conta.
+            </p>
+
+        </div>
+
+
+        <!-- FORMULÁRIO -->
+
+        <div class="formulario">
+
+            <label for="email">
+                E-mail
+            </label>
+
+            <input
+                id="email"
+                type="email"
+                placeholder="seuemail@exemplo.com"
+                [(ngModel)]="email"
+            >
+
+            <button
+                type="button"
+                (click)="enviarLink()"
+            >
+                Enviar link de recuperação
+            </button>
+
+        </div>
+
+
+        <!-- MENSAGEM -->
+
+        <div
+            *ngIf="mensagem"
+            class="mensagem"
+            [class.sucesso]="enviado"
+        >
+            {{ mensagem }}
+        </div>
+
+
+        <!-- VOLTAR -->
+
+        <a
+            routerLink="/login"
+            class="voltar"
+        >
+            ← Voltar para o login
+        </a>
+
+
+        <!-- RODAPÉ -->
+
+        <div class="rodapeReenvio">
+
+            <span>
+                OFICINA & MEMÓRIA
+            </span>
+
+            <p>
+                Peças que preservam histórias.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>

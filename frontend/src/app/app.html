@@ -1,0 +1,89 @@
+<header class="header">
+
+  <div class="header-conteudo">
+
+    <!-- LOGOTIPO -->
+    <a routerLink="/vitrine" class="brand">
+
+      <div class="logo-circulo">
+        <img
+          src="/logo.png"
+          alt="Arca Retrô"
+        >
+      </div>
+
+      <div class="brand-texto">
+        <span class="nome-arca">ARCA</span>
+        <small class="nome-retro">RETRÔ</small>
+        <small class="est">EST. 1970</small>
+      </div>
+
+    </a>
+
+    <!-- NAVEGAÇÃO -->
+    <nav class="navegacao">
+
+      <a routerLink="/vitrine" class="nav-link">
+        Coleção
+      </a>
+
+      <a routerLink="/vitrine" class="nav-link">
+        Promoções
+      </a>
+
+      <a routerLink="/login" class="nav-link">
+        Minha conta
+      </a>
+
+      <a routerLink="/cadastro" class="nav-link">
+        Criar conta
+      </a>
+
+      <a routerLink="/lista-pedidos" class="nav-link">
+        Meus pedidos
+      </a>
+
+      <a routerLink="/cesta" class="nav-link cesta-link">
+        Cesta
+      </a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+
+<!-- CONTEÚDO DAS PÁGINAS -->
+<router-outlet></router-outlet>
+
+
+<!-- RODAPÉ -->
+<footer class="footer">
+
+  <div class="footer-conteudo">
+
+    <div class="footer-marca">
+      <span>ARCA RETRÔ</span>
+
+      <p>
+        Peças que preservam histórias.
+      </p>
+    </div>
+
+    <div class="footer-linha"></div>
+
+    <p class="footer-descricao">
+      Objetos, móveis e lembranças de outras épocas,
+      selecionados para continuar contando suas histórias.
+    </p>
+
+    <div class="footer-info">
+      Rua Frei João, 59 · São Paulo — SP
+      <br>
+      (0xx11) 2344-2344 · teste@teste.com
+    </div>
+
+  </div>
+
+</footer>

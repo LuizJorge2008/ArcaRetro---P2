@@ -1,0 +1,519 @@
+.detalhe {
+  min-height: 100vh;
+  background: #0c0804;
+  color: #ede0cc;
+  padding: 40px 7%;
+}
+
+
+/* =========================
+   TOPO
+========================= */
+
+.detalhe-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-bottom: 30px;
+  border-bottom: 1px solid #24180f;
+}
+
+.voltar {
+  color: #75695b;
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+
+  transition: 0.3s;
+}
+
+.voltar:hover {
+  color: #cfa454;
+}
+
+.codigo {
+  color: #75695b;
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+}
+
+
+/* =========================
+   PRODUTO
+========================= */
+
+.produto {
+  max-width: 1250px;
+  margin: 65px auto 0;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 80px;
+}
+
+
+/* =========================
+   IMAGEM
+========================= */
+
+.imagem-area {
+  height: 570px;
+  background: #0e0905;
+  border: 1px solid #24180f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.imagem-produto {
+  width: 95%;
+  height: 95%;
+  object-fit: contain;
+  object-position: center;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.5s ease;
+}
+
+.etiqueta {
+  position: absolute;
+
+  top: 25px;
+  left: 25px;
+
+  color: #cfa454;
+
+  font-size: 0.65rem;
+  letter-spacing: 3px;
+
+  border: 1px solid #4a351e;
+
+  padding: 8px 12px;
+
+  z-index: 2;
+}
+
+
+/* =========================
+   INFORMAÇÕES
+========================= */
+
+.informacoes {
+  padding-top: 20px;
+}
+
+.categoria {
+  color: #cfa454;
+
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.informacoes h1 {
+  font-family: 'Cormorant Garamond', serif;
+
+  font-size: clamp(3rem, 5vw, 5rem);
+
+  font-weight: 400;
+
+  line-height: 0.95;
+
+  margin: 15px 0 25px;
+
+  color: #ede0cc;
+}
+
+.linha-dourada {
+  width: 65px;
+  height: 1px;
+
+  background: #cfa454;
+
+  margin-bottom: 25px;
+}
+
+.descricao {
+  max-width: 530px;
+
+  color: #9a8b78;
+
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+
+/* =========================
+   PREÇOS
+========================= */
+
+.precos {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 35px;
+
+  position: relative;
+}
+
+.preco-antigo {
+  color: #75695b;
+
+  font-size: 0.95rem;
+
+  text-decoration: line-through;
+}
+
+.preco {
+  color: #cfa454;
+
+  font-family: 'Cormorant Garamond', serif;
+
+  font-size: 2.7rem;
+
+  margin-top: 2px;
+}
+
+.economia {
+  color: #75695b;
+
+  font-size: 0.62rem;
+
+  letter-spacing: 2px;
+
+  margin-top: 3px;
+}
+
+
+/* =========================
+   DISPONIBILIDADE
+========================= */
+
+.disponibilidade {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  margin-top: 25px;
+
+  color: #8f806d;
+
+  font-size: 0.8rem;
+}
+
+.bolinha {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #cfa454;
+}
+
+
+/* =========================
+   QUANTIDADE
+========================= */
+
+.quantidade-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  max-width: 250px;
+
+  margin-top: 30px;
+
+  color: #75695b;
+
+  font-size: 0.8rem;
+}
+
+.quantidade {
+  display: flex;
+  align-items: center;
+
+  border: 1px solid #2b1d12;
+}
+
+.quantidade button {
+  width: 38px;
+  height: 38px;
+
+  background: transparent;
+  color: #cfa454;
+
+  border: none;
+
+  font-size: 1.2rem;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.quantidade button:hover {
+  background: #1a1109;
+}
+
+.quantidade span {
+  width: 38px;
+
+  text-align: center;
+
+  color: #ede0cc;
+}
+
+
+/* =========================
+   BOTÕES
+========================= */
+
+.acoes {
+  display: flex;
+
+  gap: 12px;
+
+  margin-top: 30px;
+}
+
+.btn-cesta,
+.btn-comprar {
+  padding: 15px 24px;
+
+  font-family: inherit;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.btn-cesta {
+  background: #cfa454;
+
+  color: #0c0804;
+
+  border: 1px solid #cfa454;
+
+  font-weight: 600;
+}
+
+.btn-cesta:hover {
+  background: #e0bb69;
+}
+
+.btn-comprar {
+  background: transparent;
+
+  color: #cfa454;
+
+  border: 1px solid #4a351e;
+}
+
+.btn-comprar:hover {
+  background: #1a1109;
+
+  border-color: #cfa454;
+}
+
+
+/* =========================
+   INFORMAÇÕES EXTRAS
+========================= */
+
+.informacoes-extras {
+  margin-top: 40px;
+
+  border-top: 1px solid #24180f;
+}
+
+.item-extra {
+  display: flex;
+
+  gap: 15px;
+
+  padding: 17px 0;
+
+  border-bottom: 1px solid #1d130b;
+}
+
+.icone {
+  color: #cfa454;
+
+  font-size: 1rem;
+}
+
+.item-extra strong {
+  color: #ede0cc;
+
+  font-size: 0.8rem;
+
+  font-weight: 500;
+}
+
+.item-extra p {
+  color: #75695b;
+
+  font-size: 0.72rem;
+
+  margin: 4px 0 0;
+}
+
+
+/* =========================
+   DESCRIÇÃO COMPLETA
+========================= */
+
+.descricao-completa {
+  max-width: 1000px;
+
+  margin: 110px auto 0;
+
+  padding-top: 55px;
+
+  border-top: 1px solid #24180f;
+}
+
+.titulo-secao {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 25px;
+
+  margin-bottom: 30px;
+}
+
+.titulo-secao > span {
+  color: #cfa454;
+
+  font-family: 'Cormorant Garamond', serif;
+
+  font-size: 1.5rem;
+}
+
+.titulo-secao small {
+  color: #75695b;
+
+  font-size: 0.65rem;
+
+  letter-spacing: 3px;
+}
+
+.titulo-secao h2 {
+  color: #ede0cc;
+
+  font-family: 'Cormorant Garamond', serif;
+
+  font-size: 2.4rem;
+
+  font-weight: 400;
+
+  margin: 8px 0 0;
+}
+
+.descricao-completa > p {
+  max-width: 760px;
+
+  margin-left: 60px;
+
+  color: #8f806d;
+
+  font-size: 0.95rem;
+
+  line-height: 2;
+}
+
+
+/* =========================
+   FINAL
+========================= */
+
+.final {
+  text-align: center;
+
+  padding: 100px 20px 40px;
+}
+
+.final p {
+  color: #75695b;
+
+  font-family: 'Cormorant Garamond', serif;
+
+  font-size: 1.5rem;
+}
+
+.final span {
+  color: #cfa454;
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 900px) {
+
+  .produto {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+  }
+
+  .imagem-area {
+    min-height: 450px;
+  }
+
+  .informacoes {
+    padding-top: 0;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .detalhe {
+    padding: 25px 5%;
+  }
+
+  .detalhe-topo {
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .produto {
+    margin-top: 40px;
+  }
+
+  .imagem-area {
+    min-height: 350px;
+  }
+
+  .informacoes h1 {
+    font-size: 3rem;
+  }
+
+  .acoes {
+    flex-direction: column;
+  }
+
+  .btn-cesta,
+  .btn-comprar {
+    width: 100%;
+  }
+
+  .titulo-secao h2 {
+    font-size: 1.9rem;
+  }
+
+  .descricao-completa > p {
+    margin-left: 0;
+  }
+
+}

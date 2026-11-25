@@ -1,0 +1,198 @@
+<main class="detalhe">
+
+  <!-- CABEÇALHO -->
+  <section class="detalhe-topo">
+
+    <a routerLink="/vitrine" class="voltar">
+      ← Voltar para a coleção
+    </a>
+
+    <span class="codigo">
+      PEÇA Nº {{ produto.codigo }}
+    </span>
+
+  </section>
+
+
+  <!-- PRODUTO -->
+  <section class="produto">
+
+    <!-- IMAGEM -->
+    <div class="imagem-area">
+
+      <div class="etiqueta">
+        ARCA RETRÔ
+      </div>
+
+      <img
+        [src]="'/' + produto.imagem"
+        [alt]="produto.nome"
+        class="imagem-produto"
+      >
+
+    </div>
+
+
+    <!-- INFORMAÇÕES -->
+    <div class="informacoes">
+
+      <span class="categoria">
+        {{ produto.categoria }}
+      </span>
+
+      <h1>
+        {{ produto.nome }}
+      </h1>
+
+      <div class="linha-dourada"></div>
+
+      <p class="descricao">
+        {{ produto.descricao }}
+      </p>
+
+
+      <!-- PREÇO -->
+      <div class="precos">
+
+        <span class="preco-antigo">
+          R$ {{ produto.valor | number:'1.2-2' }}
+        </span>
+
+        <span class="preco">
+          R$ {{ produto.valorPromo | number:'1.2-2' }}
+        </span>
+
+        <span class="economia">
+          OFERTA ESPECIAL
+        </span>
+
+      </div>
+
+
+      <!-- ESTOQUE -->
+      <div class="disponibilidade">
+        <span class="bolinha"></span>
+        {{ produto.disponibilidade }}
+      </div>
+
+
+      <!-- QUANTIDADE -->
+      <div class="quantidade-area">
+
+        <span>Quantidade</span>
+
+        <div class="quantidade">
+
+          <button
+            type="button"
+            (click)="diminuirQuantidade()"
+          >
+            −
+          </button>
+
+          <span>
+            {{ quantidade }}
+          </span>
+
+          <button
+            type="button"
+            (click)="aumentarQuantidade()"
+          >
+            +
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- BOTÕES -->
+      <div class="acoes">
+
+        <button
+          type="button"
+          class="btn-cesta"
+          (click)="adicionarCesta()"
+        >
+          Adicionar à cesta
+        </button>
+
+        <button
+          type="button"
+          class="btn-comprar"
+          (click)="comprarAgora()"
+        >
+          Comprar agora
+        </button>
+
+      </div>
+
+
+      <!-- INFORMAÇÕES EXTRAS -->
+      <div class="informacoes-extras">
+
+        <div class="item-extra">
+          <span class="icone">◇</span>
+
+          <div>
+            <strong>Peça selecionada</strong>
+            <p>Produto escolhido cuidadosamente pela Arca Retrô.</p>
+          </div>
+        </div>
+
+        <div class="item-extra">
+          <span class="icone">◇</span>
+
+          <div>
+            <strong>Envio seguro</strong>
+            <p>Embalagem preparada para proteger sua peça.</p>
+          </div>
+        </div>
+
+        <div class="item-extra">
+          <span class="icone">◇</span>
+
+          <div>
+            <strong>Compra protegida</strong>
+            <p>Seus dados são tratados com segurança.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- DESCRIÇÃO COMPLETA -->
+  <section class="descricao-completa">
+
+    <div class="titulo-secao">
+      <span>01</span>
+
+      <div>
+        <small>SOBRE A PEÇA</small>
+        <h2>Uma história para levar para casa.</h2>
+      </div>
+    </div>
+
+
+    <p>
+      {{ produto.descricaoCompleta }}
+    </p>
+
+  </section>
+
+
+  <!-- RODAPÉ DA PÁGINA -->
+  <section class="final">
+
+    <p>
+      Objetos carregam histórias.
+      <span>Alguns merecem continuar sendo contados.</span>
+    </p>
+
+  </section>
+
+</main>

@@ -1,0 +1,254 @@
+<main class="vitrine">
+
+    <!-- APRESENTAÇÃO -->
+
+    <section class="hero">
+
+        <div class="heroTexto">
+
+            <span class="pequenoTitulo">
+                ARCA RETRÔ
+            </span>
+
+            <h1>
+                Objetos que<br>
+                atravessam o tempo.
+            </h1>
+
+            <p>
+                Uma coleção de móveis, aparelhos, roupas e objetos
+                selecionados para quem aprecia histórias que permanecem.
+            </p>
+
+            <a
+                routerLink="/resulta-busca"
+                class="botaoPrincipal"
+            >
+                Explorar coleção
+            </a>
+
+        </div>
+
+        <div class="heroDecoracao">
+
+            <div class="circuloDecorativo"></div>
+
+            <div class="numeroHero">
+                70
+            </div>
+
+            <span>
+                EST. 1970
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- BUSCA -->
+
+    <section class="areaBusca">
+
+        <div class="tituloSecao">
+
+            <span>
+                NOSSA COLEÇÃO
+            </span>
+
+            <h2>
+                Encontre sua próxima peça
+            </h2>
+
+        </div>
+
+        <div class="campoBusca">
+
+            <input
+                type="text"
+                placeholder="O que você está procurando?"
+            >
+
+            <button type="button">
+                Buscar
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- CATEGORIAS -->
+
+    <section class="categorias">
+
+        <button
+            *ngFor="let categoria of categorias"
+            [class.ativa]="categoriaSelecionada === categoria"
+            (click)="selecionarCategoria(categoria)"
+        >
+            {{ categoria }}
+        </button>
+
+    </section>
+
+
+    <!-- PRODUTOS -->
+
+    <section class="produtos">
+
+        <div class="cabecalhoProdutos">
+
+            <div>
+
+                <span>
+                    SELEÇÃO ARCA
+                </span>
+
+                <h2>
+                    Peças selecionadas
+                </h2>
+
+            </div>
+
+            <span class="contador">
+                {{ produtosFiltrados().length }} produtos
+            </span>
+
+        </div>
+
+
+        <div class="gradeProdutos">
+
+            <article
+                class="produtoCard"
+                *ngFor="let produto of produtosFiltrados()"
+            >
+
+                <div class="imagemProduto">
+
+                    <img
+                        *ngIf="produto.imagem"
+                        [src]="'/' + produto.imagem"
+                        [alt]="produto.nome"
+                    >
+
+                    <span *ngIf="!produto.imagem">
+                        Imagem indisponível
+                    </span>
+
+                    <span
+                        class="etiqueta"
+                        *ngIf="produto.valorPromo < produto.valor"
+                    >
+                        OFERTA
+                    </span>
+
+                    <span
+                        class="destaque"
+                        *ngIf="produto.destaque"
+                    >
+                        DESTAQUE
+                    </span>
+
+                </div>
+
+
+                <div class="informacoesProduto">
+
+                    <span class="categoriaProduto">
+                        {{ produto.categoria }}
+                    </span>
+
+                    <h3>
+                        {{ produto.nome }}
+                    </h3>
+
+                    <p>
+                        {{ produto.descricao }}
+                    </p>
+
+
+                    <div class="precos">
+
+                        <span
+                            class="precoAntigo"
+                            *ngIf="produto.valorPromo < produto.valor"
+                        >
+                            R$
+                            {{ produto.valor.toFixed(2).replace('.', ',') }}
+                        </span>
+
+                        <strong>
+                            R$
+                            {{ produto.valorPromo.toFixed(2).replace('.', ',') }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="acoesProduto">
+
+                        <a
+                            [routerLink]="['/detalhe', produto.codigo]"
+                            class="btn-detalhe"
+                        >
+                            Ver detalhes
+                        </a>
+
+                        <button
+                            type="button"
+                            class="botaoCesta"
+                            (click)="adicionarCesta(produto)"
+                        >
+                            + Cesta
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- BANNER FINAL -->
+
+    <section class="manifesto">
+
+        <div>
+
+            <span>
+                OFICINA & MEMÓRIA
+            </span>
+
+            <h2>
+                Mais que objetos.<br>
+                Memórias.
+            </h2>
+
+            <p>
+                Cada peça carrega marcas do tempo,
+                histórias e uma personalidade própria.
+            </p>
+
+        </div>
+
+        <div class="manifestoNumero">
+
+            <strong>
+                01
+            </strong>
+
+            <span>
+                COLEÇÃO
+            </span>
+
+        </div>
+
+    </section>
+
+</main>

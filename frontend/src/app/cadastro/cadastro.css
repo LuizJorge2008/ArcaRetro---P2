@@ -1,0 +1,317 @@
+/* =========================
+   CONFIGURAÇÃO GERAL
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 40px 20px;
+
+    background-color: #0c0804;
+
+    color: #ede0cc;
+
+    font-family: "DM Mono", monospace;
+
+    text-align: center;
+}
+
+
+/* =========================
+   FORMULÁRIO
+========================= */
+
+.janela {
+    width: 700px;
+
+    margin: auto;
+
+    padding: 40px;
+
+    background-color: #100b07;
+
+    border: 1px solid #39291b;
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.headerPrincipal {
+    padding-bottom: 30px;
+
+    border-bottom: 1px solid #39291b;
+}
+
+.headerPrincipal h1 {
+    margin: 15px 0;
+
+    color: #ede0cc;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 45px;
+
+    font-weight: normal;
+}
+
+.headerPrincipal::before {
+    content: "ARCA RETRÔ";
+
+    display: block;
+
+    color: #cfa454;
+
+    font-size: 11px;
+
+    letter-spacing: 5px;
+}
+
+#descricao1 {
+    color: #a8835c;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   SEÇÕES
+========================= */
+
+.dadosPessoal,
+.endereco,
+.dadosAcesso,
+.preferencia,
+.termosUso {
+    padding: 30px 0;
+
+    border-bottom: 1px solid #39291b;
+}
+
+
+.dadosPessoal h3,
+.endereco h3,
+.dadosAcesso h3,
+.preferencia h3,
+.termosUso h3 {
+    margin-bottom: 10px;
+
+    color: #ede0cc;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 24px;
+
+    font-weight: normal;
+}
+
+
+/* Estrelinha dourada antes dos títulos */
+
+.dadosPessoal h3::before,
+.endereco h3::before,
+.dadosAcesso h3::before,
+.preferencia h3::before,
+.termosUso h3::before {
+    content: "✦ ";
+
+    color: #cfa454;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   DESCRIÇÕES
+========================= */
+
+#descricao2,
+#descricao3,
+#descricao4 {
+    margin-bottom: 25px;
+
+    color: #a8835c;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   CAMPOS DE TEXTO
+========================= */
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="tel"],
+input[type="email"],
+input[type="password"],
+select {
+    width: 60%;
+
+    height: 42px;
+
+    margin: 8px auto;
+
+    padding: 8px 12px;
+
+    background-color: #0c0804;
+
+    border: 1px solid #39291b;
+
+    color: #ede0cc;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 12px;
+
+    outline: none;
+}
+
+
+/* Quando clicar no campo */
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+input[type="tel"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+select:focus {
+    border-color: #cfa454;
+}
+
+
+/* Texto dentro dos campos */
+
+input::placeholder {
+    color: #6f5d4b;
+}
+
+
+/* =========================
+   CHECKBOX
+========================= */
+
+input[type="checkbox"] {
+    accent-color: #cfa454;
+
+    margin-right: 6px;
+}
+
+
+/* =========================
+   PREFERÊNCIAS
+========================= */
+
+.preferencia input[type="checkbox"] {
+    margin-top: 12px;
+}
+
+.preferencia {
+    color: #c8b59e;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   TERMOS DE USO
+========================= */
+
+.termosUso {
+    color: #a8835c;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+.termosUso a {
+    color: #cfa454;
+
+    text-decoration: none;
+}
+
+.termosUso a:hover {
+    color: #ede0cc;
+}
+
+
+/* =========================
+   BOTÃO
+========================= */
+
+.botao {
+    width: 80%;
+
+    margin-top: 30px;
+
+    padding: 15px;
+
+    background-color: #cfa454;
+
+    border: 1px solid #cfa454;
+
+    color: #0c0804;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+}
+
+
+/* Efeito ao passar o mouse */
+
+.botao:hover {
+    background-color: #ede0cc;
+
+    border-color: #ede0cc;
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 750px) {
+
+    body {
+        padding: 20px 10px;
+    }
+
+    .janela {
+        width: 100%;
+        padding: 25px;
+    }
+
+    .headerPrincipal h1 {
+        font-size: 35px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="date"],
+    input[type="tel"],
+    input[type="email"],
+    input[type="password"],
+    select,
+    .botao {
+        width: 100%;
+    }
+
+}

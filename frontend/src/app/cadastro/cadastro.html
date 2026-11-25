@@ -1,0 +1,271 @@
+
+<form class="janela" (ngSubmit)="criarConta()" ngNativeValidate>
+
+    <div class="subtitulo">
+        ARCA RETRÔ
+    </div>
+
+    <div class="headerPrincipal">
+        <h1>Crie sua conta</h1>
+    </div>
+
+    <p id="descricao1">
+        Bem-vindo! Cadastre-se para conhecer a época de ouro.
+    </p>
+
+    <div class="dadosPessoal">
+
+        <h3>Dados Pessoais:</h3>
+
+        <p id="descricao2">
+            Necessários para a realização de compras.
+        </p>
+
+        Nome Completo:
+        <input
+            type="text"
+            id="txtNome"
+            name="nome"
+            [(ngModel)]="dadosConta.nome"
+            placeholder="Digite seu nome completo"
+            required
+        >
+        <br>
+
+        CPF:
+        <input
+            type="text"
+            id="textCpf"
+            name="documento"
+            [(ngModel)]="dadosConta.documento"
+            placeholder="000.000.000-00"
+            maxlength="14"
+            required
+        >
+        <br>
+
+        Data de Nascimento:
+        <input
+            type="date"
+            id="nascimento"
+            name="nascimento"
+        >
+        <br>
+
+        Telefone:
+        <input
+            type="tel"
+            id="telefone"
+            name="telefone"
+            placeholder="(11) 99999-9999"
+            maxlength="15"
+            autocomplete="tel"
+            required
+        >
+        <br><br>
+
+    </div>
+
+    <div class="endereco">
+
+        <h3>Endereço:</h3>
+
+        <p id="descricao3">
+            Necessário para entregas.
+        </p>
+
+        CEP:
+        <input
+            type="text"
+            id="txtCEP"
+            name="cep"
+            placeholder="00000-000"
+            required
+        >
+        <br>
+
+        Estado:
+        <select id="estado" name="estado" required>
+
+            <option value="">Selecione</option>
+            <option value="AC">Acre</option>
+            <option value="AL">Alagoas</option>
+            <option value="AP">Amapá</option>
+            <option value="AM">Amazonas</option>
+            <option value="BA">Bahia</option>
+            <option value="CE">Ceará</option>
+            <option value="DF">Distrito Federal</option>
+            <option value="ES">Espírito Santo</option>
+            <option value="GO">Goiás</option>
+            <option value="MA">Maranhão</option>
+            <option value="MT">Mato Grosso</option>
+            <option value="MS">Mato Grosso do Sul</option>
+            <option value="MG">Minas Gerais</option>
+            <option value="PA">Pará</option>
+            <option value="PB">Paraíba</option>
+            <option value="PR">Paraná</option>
+            <option value="PE">Pernambuco</option>
+            <option value="PI">Piauí</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="RN">Rio Grande do Norte</option>
+            <option value="RS">Rio Grande do Sul</option>
+            <option value="RO">Rondônia</option>
+            <option value="RR">Roraima</option>
+            <option value="SC">Santa Catarina</option>
+            <option value="SP">São Paulo</option>
+            <option value="SE">Sergipe</option>
+            <option value="TO">Tocantins</option>
+
+        </select>
+        <br>
+
+        Cidade:
+        <input
+            type="text"
+            id="cidade"
+            name="cidade"
+            placeholder="Digite sua cidade"
+            required
+        >
+        <br>
+
+        Bairro:
+        <input
+            type="text"
+            id="bairro"
+            name="bairro"
+            placeholder="Digite seu bairro"
+            required
+        >
+        <br>
+
+        Endereço:
+        <input
+            type="text"
+            id="endereco"
+            name="endereco"
+            placeholder="Rua, Avenida..."
+            required
+        >
+        <br>
+
+        Número:
+        <input
+            type="number"
+            id="txtNumero"
+            name="numero"
+            placeholder="Nº"
+            required
+        >
+        <br><br>
+
+    </div>
+
+    <div class="dadosAcesso">
+
+        <h3>Dados de Acesso:</h3>
+
+        <p id="descricao4">
+            Necessários para acessar sua conta.
+        </p>
+
+        Nome de Usuário:
+        <input
+            type="text"
+            id="txtUsuario"
+            name="usuario"
+            placeholder="Digite seu nome de usuário"
+            required
+        >
+        <br>
+
+        E-mail:
+        <input
+            type="email"
+            id="txtEmail"
+            name="email"
+            [(ngModel)]="dadosConta.email"
+            placeholder="Digite seu e-mail"
+            required
+        >
+        <br>
+
+        Senha:
+        <input
+            type="password"
+            id="txtSenha"
+            name="senha"
+            [(ngModel)]="dadosConta.senha"
+            minlength="8"
+            placeholder="Mínimo de 8 caracteres"
+            required
+        >
+        <br>
+
+        Confirmar Senha:
+        <input
+            type="password"
+            id="confirmaSenha"
+            name="confirmarSenha"
+            [(ngModel)]="dadosConta.confirmarSenha"
+            minlength="8"
+            placeholder="Repetir senha"
+            required
+        >
+        <br><br>
+
+    </div>
+
+    <div class="preferencia">
+
+        <h3>Preferências:</h3>
+
+        <input type="checkbox" id="moveis" name="moveis">
+        Móveis
+        <br>
+
+        <input type="checkbox" id="lustres" name="lustres">
+        Lustres
+        <br>
+
+        <input type="checkbox" id="aparelhos" name="aparelhos">
+        Aparelhos
+        <br>
+
+        <input type="checkbox" id="revista" name="revista">
+        Revista
+        <br>
+
+        <input type="checkbox" id="roupas" name="roupas">
+        Peças de roupas
+        <br>
+
+    </div>
+
+    <br><br>
+
+    <div class="termosUso">
+
+        <h3>Termos de uso:</h3>
+
+        <input
+            type="checkbox"
+            id="termos"
+            name="termos"
+            required
+        >
+
+        Li e concordo com os
+        <a href="#">Termos de Uso</a>
+        e a
+        <a href="#">Política de Privacidade</a>.
+
+        <br><br>
+
+    </div>
+
+    <button type="submit" class="botao">
+        Criar conta
+    </button>
+
+</form>

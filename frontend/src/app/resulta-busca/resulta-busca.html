@@ -1,0 +1,358 @@
+<div class="pagina">
+
+    <!-- CABEÇALHO -->
+    <header class="headerPrincipal">
+
+        <div class="subtitulo">
+            ARCA RETRÔ
+        </div>
+
+        <h1>Resultados da Busca</h1>
+
+        <p id="descricao1">
+            Encontre peças que contam histórias de outras épocas.
+        </p>
+
+    </header>
+
+
+    <!-- BARRA DE BUSCA -->
+    <section class="areaBusca">
+
+        <input
+            type="text"
+            id="campoBusca"
+            placeholder="O que você está procurando?"
+        >
+
+        <button class="botaoBusca">
+            Buscar
+        </button>
+
+    </section>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="conteudo">
+
+
+        <!-- FILTROS -->
+        <aside class="filtros">
+
+            <h3>Filtros</h3>
+
+            <div class="linhaFiltro"></div>
+
+            <label for="categoria">
+                Categoria
+            </label>
+
+            <select id="categoria">
+
+                <option value="">
+                    Todas as categorias
+                </option>
+
+                <option value="moveis">
+                    Móveis
+                </option>
+
+                <option value="lustres">
+                    Lustres
+                </option>
+
+                <option value="aparelhos">
+                    Aparelhos
+                </option>
+
+                <option value="revistas">
+                    Revistas
+                </option>
+
+                <option value="roupas">
+                    Peças de roupas
+                </option>
+
+            </select>
+
+
+            <label for="ordenacao">
+                Ordenar por
+            </label>
+
+            <select id="ordenacao">
+
+                <option value="relevancia">
+                    Relevância
+                </option>
+
+                <option value="menor-preco">
+                    Menor preço
+                </option>
+
+                <option value="maior-preco">
+                    Maior preço
+                </option>
+
+                <option value="nome">
+                    Nome
+                </option>
+
+            </select>
+
+
+            <div class="filtroPreco">
+
+                <label>
+                    Faixa de preço
+                </label>
+
+                <input
+                    type="number"
+                    placeholder="Preço mínimo"
+                >
+
+                <input
+                    type="number"
+                    placeholder="Preço máximo"
+                >
+
+            </div>
+
+
+            <button class="botaoFiltrar">
+                Aplicar filtros
+            </button>
+
+        </aside>
+
+
+        <!-- RESULTADOS -->
+        <section class="resultados">
+
+            <div class="cabecalhoResultados">
+
+                <h2>Peças encontradas</h2>
+
+                <span class="quantidade">
+                    6 produtos encontrados
+                </span>
+
+            </div>
+
+
+            <!-- PRODUTOS -->
+            <div class="produtos">
+
+
+                <!-- PRODUTO 1 -->
+                <article class="produto">
+
+                    <div class="imagemProduto">
+                        <span class="destaque">
+                            DESTAQUE
+                        </span>
+
+                        <img
+                          src="/poltrona.jpeg"
+                          alt="Poltrona Retrô"
+                        >
+                    </div>
+
+                    <div class="informacoes">
+
+                        <span class="categoria">
+                            MÓVEIS
+                        </span>
+
+                        <h3>
+                            Poltrona Retrô
+                        </h3>
+
+                        <p>
+                            Poltrona clássica com acabamento
+                            inspirado nas décadas passadas.
+                        </p>
+
+                        <div class="preco">
+
+                            <span class="precoAntigo">
+                                R$ 1.890,00
+                            </span>
+
+                            <strong>
+                                R$ 1.590,00
+                            </strong>
+
+                        </div>
+
+                        <a
+                           [routerLink]="['/detalhe', 2]"
+                           class="botaoProduto"
+                        >
+                         Ver produto
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUTO 2 -->
+                <article class="produto">
+
+                    <div class="imagemProduto">
+
+                        <img
+                     src="/lustre.jpeg"
+                     alt="Lustre Vintage"
+                    >
+
+                    </div>
+
+                    <div class="informacoes">
+
+                        <span class="categoria">
+                            LUSTRES
+                        </span>
+
+                        <h3>
+                            Lustre Vintage
+                        </h3>
+
+                        <p>
+                            Lustre decorativo com design clássico
+                            e acabamento elegante.
+                        </p>
+
+                        <div class="preco">
+
+                            <strong>
+                                R$ 780,00
+                            </strong>
+
+                        </div>
+
+                        <a
+                         [routerLink]="['/detalhe', 3]"
+                         class="botaoProduto"
+                        >
+                          Ver produto
+                        </a>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUTO 3 -->
+                <article class="produto">
+
+                    <div class="imagemProduto">
+
+                        <img
+                          src="/radio.jpeg"
+                          alt="Radio Antigo"
+                        >
+
+                    </div>
+
+                    <div class="informacoes">
+
+                        <span class="categoria">
+                            APARELHOS
+                        </span>
+
+                        <h3>
+                            Rádio Antigo
+                        </h3>
+
+                        <p>
+                            Rádio decorativo inspirado nos aparelhos
+                            clássicos do século passado.
+                        </p>
+
+                        <div class="preco">
+
+                            <strong>
+                                R$ 950,00
+                            </strong>
+
+                        </div>
+
+                        <a
+                          [routerLink]="['/detalhe', 1]"
+                          class="botaoProduto"
+                        >
+                         Ver produto
+                        </a>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUTO 4 -->
+                <article class="produto">
+
+                    <div class="imagemProduto">
+
+                        <img
+                          src="/revista.jpeg"
+                          alt="Revista Vintage"
+                        >
+
+                    </div>
+
+                    <div class="informacoes">
+
+                        <span class="categoria">
+                            REVISTAS
+                        </span>
+
+                        <h3>
+                            Revista Vintage
+                        </h3>
+
+                        <p>
+                            Edição antiga preservada para
+                            colecionadores e apaixonados por história.
+                        </p>
+
+                        <div class="preco">
+
+                            <strong>
+                                R$ 120,00
+                            </strong>
+
+                        </div>
+
+                        <a
+                         [routerLink]="['/detalhe', 5]"
+                         class="botaoProduto"
+                        >
+                         Ver produto
+                        </a>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer class="rodape">
+
+        <span>
+            ARCA RETRÔ
+        </span>
+
+        <p>
+            Peças que preservam histórias.
+        </p>
+
+    </footer>
+
+</div>

@@ -1,0 +1,718 @@
+/* ================================
+   VITRINE - ARCA RETRÔ
+   TEMA ESCURO
+   ================================ */
+
+.vitrine {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px 80px;
+    box-sizing: border-box;
+
+    color: #ede0cc;
+    background: #0c0804;
+}
+
+
+/* ================================
+   HERO
+   ================================ */
+
+.hero {
+    min-height: 500px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 70px;
+
+    background: #0e0905;
+
+    border: 1px solid #24180f;
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+.heroTexto {
+    max-width: 650px;
+    position: relative;
+    z-index: 2;
+}
+
+
+.pequenoTitulo {
+    color: #cfa454;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+}
+
+
+.hero h1 {
+    margin: 20px 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(3rem, 6vw, 5.5rem);
+
+    font-weight: normal;
+    line-height: 0.95;
+
+    color: #ede0cc;
+}
+
+
+.hero p {
+    max-width: 550px;
+
+    font-family: "DM Mono", monospace;
+
+    color: #8f8170;
+
+    line-height: 1.8;
+}
+
+
+.botaoPrincipal {
+    display: inline-block;
+
+    margin-top: 25px;
+
+    padding: 15px 28px;
+
+    background: #cfa454;
+    color: #0c0804;
+
+    text-decoration: none;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 0.8rem;
+
+    transition: 0.3s;
+}
+
+
+.botaoPrincipal:hover {
+    background: #ede0cc;
+}
+
+
+/* ================================
+   DECORAÇÃO DO HERO
+   ================================ */
+
+.heroDecoracao {
+    width: 330px;
+    height: 330px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    color: #cfa454;
+}
+
+
+.circuloDecorativo {
+    width: 280px;
+    height: 280px;
+
+    border: 1px solid #4a351e;
+
+    border-radius: 50%;
+
+    position: absolute;
+}
+
+
+.circuloDecorativo::before {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    border: 1px solid #2c1e12;
+
+    border-radius: 50%;
+
+    top: 29px;
+    left: 29px;
+}
+
+
+.numeroHero {
+    font-family: Georgia, serif;
+
+    font-size: 8rem;
+
+    line-height: 1;
+
+    position: relative;
+}
+
+
+.heroDecoracao span {
+    font-family: "DM Mono", monospace;
+
+    font-size: 0.7rem;
+
+    letter-spacing: 5px;
+
+    position: relative;
+}
+
+
+/* ================================
+   BUSCA
+   ================================ */
+
+.areaBusca {
+    padding: 70px 0 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    gap: 40px;
+}
+
+
+.tituloSecao span,
+.cabecalhoProdutos span,
+.manifesto span {
+    color: #cfa454;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 0.7rem;
+
+    letter-spacing: 3px;
+}
+
+
+.tituloSecao h2,
+.cabecalhoProdutos h2 {
+    margin: 10px 0 0;
+
+    font-family: Georgia, serif;
+
+    font-size: 2.3rem;
+
+    font-weight: normal;
+
+    color: #ede0cc;
+}
+
+
+.campoBusca {
+    display: flex;
+
+    border-bottom: 1px solid #4a351e;
+}
+
+
+.campoBusca input {
+    width: 280px;
+
+    padding: 14px 5px;
+
+    background: transparent;
+
+    border: none;
+    outline: none;
+
+    color: #ede0cc;
+
+    font-family: "DM Mono", monospace;
+}
+
+
+.campoBusca input::placeholder {
+    color: #5f5549;
+}
+
+
+.campoBusca button {
+    background: transparent;
+
+    border: none;
+
+    color: #cfa454;
+
+    font-family: "DM Mono", monospace;
+
+    cursor: pointer;
+}
+
+
+/* ================================
+   CATEGORIAS
+   ================================ */
+
+.categorias {
+    display: flex;
+
+    gap: 10px;
+
+    margin: 30px 0 60px;
+
+    flex-wrap: wrap;
+}
+
+
+.categorias button {
+    padding: 10px 18px;
+
+    background: #0e0905;
+
+    border: 1px solid #2b1d12;
+
+    color: #8f8170;
+
+    font-family: "DM Mono", monospace;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.categorias button:hover,
+.categorias button.ativa {
+    background: #cfa454;
+
+    border-color: #cfa454;
+
+    color: #0c0804;
+}
+
+
+/* ================================
+   PRODUTOS
+   ================================ */
+
+.cabecalhoProdutos {
+    display: flex;
+
+    align-items: end;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #24180f;
+
+    padding-bottom: 20px;
+
+    margin-bottom: 30px;
+}
+
+
+.contador {
+    color: #5f5549 !important;
+
+    letter-spacing: 1px !important;
+}
+
+
+.gradeProdutos {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+/* ================================
+   CARD DO PRODUTO
+   ================================ */
+
+.produtoCard {
+    background: #0e0905;
+
+    border: 1px solid #24180f;
+
+    transition: 0.3s;
+
+    overflow: hidden;
+}
+
+
+.produtoCard:hover {
+    transform: translateY(-5px);
+
+    border-color: #4a351e;
+}
+
+
+/* ================================
+   IMAGEM
+   ================================ */
+
+.imagemProduto {
+    height: 280px;
+
+    background: #080503;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.imagemProduto img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: 0.5s;
+}
+
+
+.produtoCard:hover .imagemProduto img {
+    transform: scale(1.04);
+}
+
+
+.etiqueta,
+.destaque {
+    position: absolute;
+
+    top: 15px;
+
+    padding: 6px 9px;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 0.6rem;
+
+    letter-spacing: 1px;
+}
+
+
+.etiqueta {
+    left: 15px;
+
+    background: #cfa454;
+
+    color: #0c0804;
+}
+
+
+.destaque {
+    right: 15px;
+
+    background: #0c0804;
+
+    border: 1px solid #4a351e;
+
+    color: #cfa454;
+}
+
+
+/* ================================
+   INFORMAÇÕES
+   ================================ */
+
+.informacoesProduto {
+    padding: 25px;
+}
+
+
+.categoriaProduto {
+    color: #66594b;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 2px;
+}
+
+
+.informacoesProduto h3 {
+    margin: 8px 0;
+
+    font-family: Georgia, serif;
+
+    font-size: 1.6rem;
+
+    font-weight: normal;
+
+    color: #ede0cc;
+}
+
+
+.informacoesProduto p {
+    min-height: 45px;
+
+    margin: 0 0 20px;
+
+    color: #75695b;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 0.72rem;
+
+    line-height: 1.6;
+}
+
+
+/* ================================
+   PREÇOS
+   ================================ */
+
+.precos {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+
+    margin-bottom: 20px;
+}
+
+
+.precoAntigo {
+    color: #51483e;
+
+    text-decoration: line-through;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 0.7rem;
+}
+
+
+.precos strong {
+    color: #cfa454;
+
+    font-family: Georgia, serif;
+
+    font-size: 1.35rem;
+
+    font-weight: normal;
+}
+
+
+/* ================================
+   BOTÕES
+   ================================ */
+
+.acoesProduto {
+    display: flex;
+
+    gap: 8px;
+}
+
+
+.botaoDetalhe,
+.botaoCesta {
+    flex: 1;
+
+    padding: 11px 8px;
+
+    text-align: center;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 0.65rem;
+
+    text-decoration: none;
+
+    cursor: pointer;
+}
+
+
+.botaoDetalhe {
+    border: 1px solid #2b1d12;
+
+    color: #a99a86;
+
+    background: #0c0804;
+}
+
+
+.botaoDetalhe:hover {
+    border-color: #4a351e;
+
+    color: #ede0cc;
+}
+
+
+.botaoCesta {
+    border: 1px solid #cfa454;
+
+    background: #cfa454;
+
+    color: #0c0804;
+}
+
+
+.botaoCesta:hover {
+    background: #ede0cc;
+
+    border-color: #ede0cc;
+}
+
+
+/* ================================
+   MANIFESTO
+   ================================ */
+
+.manifesto {
+    margin-top: 100px;
+
+    padding: 70px;
+
+    border-top: 1px solid #24180f;
+    border-bottom: 1px solid #24180f;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.manifesto h2 {
+    margin: 15px 0;
+
+    font-family: Georgia, serif;
+
+    font-size: 3rem;
+
+    font-weight: normal;
+
+    line-height: 1;
+
+    color: #ede0cc;
+}
+
+
+.manifesto p {
+    max-width: 500px;
+
+    color: #75695b;
+
+    font-family: "DM Mono", monospace;
+
+    line-height: 1.7;
+}
+
+
+.manifestoNumero {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.manifestoNumero strong {
+    font-family: Georgia, serif;
+
+    font-size: 5rem;
+
+    font-weight: normal;
+
+    color: #cfa454;
+}
+
+
+.manifestoNumero span {
+    font-size: 0.6rem;
+}
+
+
+/* ================================
+   RESPONSIVO
+   ================================ */
+
+@media (max-width: 1000px) {
+
+    .hero {
+        padding: 50px;
+    }
+
+    .heroDecoracao {
+        width: 250px;
+    }
+
+    .gradeProdutos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 750px) {
+
+    .vitrine {
+        padding: 0 20px 50px;
+    }
+
+    .hero {
+        min-height: auto;
+
+        padding: 50px 30px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+
+    .heroDecoracao {
+        display: none;
+    }
+
+    .areaBusca {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .campoBusca {
+        width: 100%;
+    }
+
+    .campoBusca input {
+        width: 100%;
+    }
+
+    .gradeProdutos {
+        grid-template-columns: 1fr;
+    }
+
+    .manifesto {
+        padding: 40px 20px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 40px;
+    }
+
+}

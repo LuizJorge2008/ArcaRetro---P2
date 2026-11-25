@@ -1,0 +1,311 @@
+/* =========================================================
+   ARCA RETRÔ — ESTILOS GLOBAIS
+========================================================= */
+
+
+/* =========================================================
+   FONTES
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Mono:wght@300;400;500&display=swap');
+
+
+/* =========================================================
+   VARIÁVEIS
+========================================================= */
+
+:root {
+
+  /* Fundo */
+
+  --preto: #080503;
+  --fundo: #0c0804;
+  --fundo-card: #100b07;
+  --fundo-claro: #17100a;
+
+
+  /* Texto */
+
+  --texto: #ede0cc;
+  --texto-suave: #8f806d;
+  --texto-fraco: #75695b;
+
+
+  /* Dourado */
+
+  --dourado: #cfa454;
+  --dourado-escuro: #a8874f;
+
+
+  /* Bordas */
+
+  --borda: #24180f;
+  --borda-clara: #39291b;
+  --borda-dourada: #4a351e;
+
+
+  /* Fontes */
+
+  --fonte-display: "Cormorant Garamond", Georgia, serif;
+  --fonte-tecnica: "DM Mono", monospace;
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+
+  min-height: 100%;
+
+  background: var(--fundo);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  min-height: 100vh;
+
+  background: var(--fundo);
+
+  color: var(--texto);
+
+  font-family: var(--fonte-tecnica);
+
+  letter-spacing: 0.01em;
+}
+
+
+/* =========================================================
+   LINKS
+========================================================= */
+
+a {
+  color: inherit;
+
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   BOTÕES
+========================================================= */
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  border-radius: 0;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   TÍTULOS
+========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--fonte-display);
+
+  font-weight: 500;
+
+  color: var(--texto);
+}
+
+
+/* =========================================================
+   CAMPOS DE FORMULÁRIO
+========================================================= */
+
+input,
+textarea,
+select {
+  border-radius: 0;
+
+  background: var(--fundo-card);
+
+  border: 1px solid var(--borda-clara);
+
+  color: var(--texto);
+
+  outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #6f5d4b;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--dourado);
+
+  box-shadow: 0 0 0 2px rgba(207, 164, 84, 0.08);
+}
+
+
+/* =========================================================
+   SELEÇÃO DE TEXTO
+========================================================= */
+
+::selection {
+  background: var(--dourado);
+
+  color: var(--preto);
+}
+
+
+/* =========================================================
+   BARRA DE ROLAGEM
+========================================================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--preto);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--borda-dourada);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--dourado-escuro);
+}
+
+
+/* =========================================================
+   GARANTIA DE FUNDO ESCURO
+========================================================= */
+
+html,
+body {
+  background-color: #0c0804 !important;
+}
+
+
+/* =========================================================
+   GARANTIA DE CABEÇALHO ESCURO
+========================================================= */
+
+header {
+  background-color: #080503 !important;
+
+  border-bottom: 1px solid #24180f;
+}
+
+
+/* =========================================================
+   GARANTIA DE FOOTER ESCURO
+========================================================= */
+
+footer {
+  background-color: #080503 !important;
+
+  color: #ede0cc;
+
+  border-top: 1px solid #24180f;
+}
+
+
+/* =========================================================
+   CONTAINERS
+========================================================= */
+
+.container,
+.row {
+  max-width: 1220px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* =========================================================
+   BOTÕES GENÉRICOS
+========================================================= */
+
+.btn {
+  border-radius: 0 !important;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+/* =========================================================
+   FORMULÁRIOS
+========================================================= */
+
+.form-control,
+textarea {
+  border: 1px solid var(--borda-clara) !important;
+
+  border-radius: 0 !important;
+
+  background: var(--fundo-card) !important;
+
+  color: var(--texto) !important;
+
+  padding: 12px 14px !important;
+}
+
+.form-control:focus,
+textarea:focus {
+  border-color: var(--dourado) !important;
+
+  box-shadow:
+    0 0 0 2px rgba(207, 164, 84, 0.08) !important;
+}
+
+
+/* =========================================================
+   ALERTAS
+========================================================= */
+
+.alert {
+  border-radius: 0 !important;
+
+  border: 1px solid var(--borda-clara) !important;
+
+  background: var(--fundo-card);
+
+  color: var(--texto);
+}
+
+
+/* =========================================================
+   RESPONSIVO GLOBAL
+========================================================= */
+
+@media (max-width: 600px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+}

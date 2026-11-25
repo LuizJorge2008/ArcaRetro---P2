@@ -1,0 +1,105 @@
+<main class="login">
+
+    <form class="janela" (ngSubmit)="login()">
+
+        <div class="subtitulo">
+            ARCA RETRÔ
+        </div>
+
+        <div class="headerPrincipal">
+            <h1>Bem-vindo de volta</h1>
+        </div>
+
+        <p id="descricao1">
+            Entre em sua conta para continuar explorando a época de ouro.
+        </p>
+
+
+        <div class="dadosAcesso">
+
+            <h3>Acesso</h3>
+
+            <p id="descricao2">
+                Informe seus dados para acessar sua conta.
+            </p>
+
+
+            <label for="usuario">
+                Nome de Usuário ou E-mail:
+            </label>
+
+            <input
+                type="email"
+                id="usuario"
+                name="email"
+                [(ngModel)]="email"
+                placeholder="Digite seu e-mail"
+                required
+            >
+
+
+            <label for="senha">
+                Senha:
+            </label>
+
+            <input
+                type="password"
+                id="senha"
+                name="senha"
+                [(ngModel)]="password"
+                placeholder="Digite sua senha"
+                required
+            >
+
+
+            <div class="opcoes">
+
+                <label class="lembrar">
+
+                    <input
+                        type="checkbox"
+                        id="lembrar"
+                    >
+
+                    Lembrar de mim
+
+                </label>
+
+
+                <!-- LINK PARA RECUPERAÇÃO DE SENHA -->
+
+                <a
+                    routerLink="/reenvio"
+                    class="linkReenvio"
+                >
+                    Esqueci minha senha
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <button
+            type="submit"
+            class="botao"
+        >
+            Entrar
+        </button>
+
+
+        <div class="cadastro">
+
+            <p>
+                Ainda não possui uma conta?
+
+                <a routerLink="/cadastro">
+                    Criar conta
+                </a>
+            </p>
+
+        </div>
+
+    </form>
+
+</main>

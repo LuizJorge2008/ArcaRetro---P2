@@ -1,0 +1,306 @@
+.reenvio {
+    min-height: 100vh;
+
+    background: #0c0804;
+
+    color: #ede0cc;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 60px 20px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   CARTÃO
+========================= */
+
+.cartaoReenvio {
+    width: 100%;
+    max-width: 540px;
+
+    background: #0e0905;
+
+    border: 1px solid #24180f;
+
+    padding: 55px 60px;
+
+    box-sizing: border-box;
+
+    position: relative;
+}
+
+
+/* =========================
+   MARCA
+========================= */
+
+.marca {
+    text-align: center;
+
+    color: #75695b;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 1rem;
+
+    letter-spacing: 4px;
+
+    padding-bottom: 35px;
+
+    border-bottom: 1px solid #24180f;
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.cabecalho {
+    padding-top: 45px;
+
+    position: relative;
+}
+
+.numero {
+    position: absolute;
+
+    top: 35px;
+    right: 0;
+
+    color: #4a351e;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 3rem;
+}
+
+.pequenoTitulo {
+    color: #cfa454;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 3px;
+}
+
+.cabecalho h1 {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 3rem;
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    margin: 18px 0;
+}
+
+.cabecalho p {
+    color: #75695b;
+
+    font-size: 0.9rem;
+
+    line-height: 1.7;
+
+    max-width: 420px;
+}
+
+
+/* =========================
+   FORMULÁRIO
+========================= */
+
+.formulario {
+    margin-top: 35px;
+}
+
+.formulario label {
+    display: block;
+
+    color: #9a8b78;
+
+    font-size: 0.75rem;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 9px;
+}
+
+.formulario input {
+    width: 100%;
+
+    height: 48px;
+
+    box-sizing: border-box;
+
+    background: #0c0804;
+
+    border: 1px solid #2b1d12;
+
+    color: #ede0cc;
+
+    padding: 0 15px;
+
+    font-family: inherit;
+
+    font-size: 0.85rem;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+.formulario input::placeholder {
+    color: #51473d;
+}
+
+.formulario input:focus {
+    border-color: #cfa454;
+}
+
+
+/* =========================
+   BOTÃO
+========================= */
+
+.formulario button {
+    width: 100%;
+
+    height: 50px;
+
+    margin-top: 15px;
+
+    background: #cfa454;
+
+    border: 1px solid #cfa454;
+
+    color: #0c0804;
+
+    font-family: inherit;
+
+    font-size: 0.75rem;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.formulario button:hover {
+    background: #e0bb69;
+
+    border-color: #e0bb69;
+}
+
+
+/* =========================
+   MENSAGEM
+========================= */
+
+.mensagem {
+    margin-top: 20px;
+
+    padding: 14px 16px;
+
+    border: 1px solid #4a351e;
+
+    background: #120c07;
+
+    color: #9a8b78;
+
+    font-size: 0.75rem;
+
+    line-height: 1.6;
+}
+
+.mensagem.sucesso {
+    color: #cfa454;
+}
+
+
+/* =========================
+   VOLTAR
+========================= */
+
+.voltar {
+    display: block;
+
+    margin-top: 28px;
+
+    color: #75695b;
+
+    text-decoration: none;
+
+    font-size: 0.78rem;
+
+    transition: 0.3s;
+}
+
+.voltar:hover {
+    color: #cfa454;
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+.rodapeReenvio {
+    margin-top: 45px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid #24180f;
+
+    text-align: center;
+}
+
+.rodapeReenvio span {
+    color: #4a351e;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 0.85rem;
+
+    letter-spacing: 3px;
+}
+
+.rodapeReenvio p {
+    color: #51473d;
+
+    font-size: 0.7rem;
+
+    margin-top: 7px;
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 600px) {
+
+    .reenvio {
+        padding: 30px 15px;
+    }
+
+    .cartaoReenvio {
+        padding: 40px 25px;
+    }
+
+    .cabecalho h1 {
+        font-size: 2.5rem;
+    }
+
+    .numero {
+        font-size: 2.5rem;
+    }
+
+}

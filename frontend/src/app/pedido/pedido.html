@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <link rel="stylesheet" href="pedido.css">
+
+        <title>Pedido - Arca Retrô</title>
+
+    </head>
+
+    <body>
+
+        <form class="janela">
+
+            <div class="subtitulo">
+                ARCA RETRÔ
+            </div>
+
+            <div class="headerPrincipal">
+
+                <h1>Seu Pedido</h1>
+
+            </div>
+
+            <p id="descricao1">
+                Confira os produtos selecionados antes de finalizar sua compra.
+            </p>
+
+
+            <!-- =========================
+                 PRODUTOS DO PEDIDO
+            ========================= -->
+
+            <div class="produtosPedido">
+
+                <h3>Produtos</h3>
+
+                <p id="descricao2">
+                    Produtos selecionados para o seu pedido.
+                </p>
+
+
+                <div class="produto">
+
+                    <div class="informacoesProduto">
+
+                        <h4>Cadeira Retrô</h4>
+
+                        <p>Peça restaurada em estilo clássico.</p>
+
+                    </div>
+
+                    <div class="quantidade">
+
+                        <label for="quantidade1">
+                            Quantidade:
+                        </label>
+
+                        <input
+                            type="number"
+                            id="quantidade1"
+                            value="1"
+                            min="1"
+                        >
+
+                    </div>
+
+                    <div class="valor">
+
+                        <span>R$ 450,00</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="produto">
+
+                    <div class="informacoesProduto">
+
+                        <h4>Rádio Antigo</h4>
+
+                        <p>Rádio decorativo inspirado nos anos 70.</p>
+
+                    </div>
+
+                    <div class="quantidade">
+
+                        <label for="quantidade2">
+                            Quantidade:
+                        </label>
+
+                        <input
+                            type="number"
+                            id="quantidade2"
+                            value="1"
+                            min="1"
+                        >
+
+                    </div>
+
+                    <div class="valor">
+
+                        <span>R$ 320,00</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 ENDEREÇO
+            ========================= -->
+
+            <div class="enderecoEntrega">
+
+                <h3>Endereço de Entrega</h3>
+
+                <p id="descricao3">
+                    Confira o endereço onde seu pedido será entregue.
+                </p>
+
+
+                <div class="campo">
+
+                    <label for="cep">
+                        CEP
+                    </label>
+
+                    <input
+                        type="text"
+                        id="cep"
+                        placeholder="00000-000"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="cidade">
+                        Cidade
+                    </label>
+
+                    <input
+                        type="text"
+                        id="cidade"
+                        placeholder="Digite sua cidade"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="endereco">
+                        Endereço
+                    </label>
+
+                    <input
+                        type="text"
+                        id="endereco"
+                        placeholder="Rua, Avenida..."
+                        required
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="numero">
+                        Número
+                    </label>
+
+                    <input
+                        type="number"
+                        id="numero"
+                        placeholder="Nº"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 PAGAMENTO
+            ========================= -->
+
+            <div class="pagamento">
+
+                <h3>Forma de Pagamento</h3>
+
+                <p id="descricao4">
+                    Escolha uma forma de pagamento.
+                </p>
+
+
+                <div class="opcoesPagamento">
+
+                    <label>
+
+                        <input
+                            type="radio"
+                            name="pagamento"
+                            value="pix"
+                            required
+                        >
+
+                        PIX
+
+                    </label>
+
+
+                    <label>
+
+                        <input
+                            type="radio"
+                            name="pagamento"
+                            value="cartao"
+                        >
+
+                        Cartão
+
+                    </label>
+
+
+                    <label>
+
+                        <input
+                            type="radio"
+                            name="pagamento"
+                            value="boleto"
+                        >
+
+                        Boleto
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 RESUMO
+            ========================= -->
+
+            <div class="resumoPedido">
+
+                <h3>Resumo do Pedido</h3>
+
+
+                <div class="linhaResumo">
+
+                    <span>Subtotal</span>
+
+                    <span>R$ 770,00</span>
+
+                </div>
+
+
+                <div class="linhaResumo">
+
+                    <span>Frete</span>
+
+                    <span>R$ 30,00</span>
+
+                </div>
+
+
+                <div class="linhaTotal">
+
+                    <span>Total</span>
+
+                    <span>R$ 800,00</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 FINALIZAÇÃO
+            ========================= -->
+
+            <button
+                type="submit"
+                class="botao"
+            >
+
+                Finalizar Pedido
+
+            </button>
+
+
+            <div class="voltar">
+
+                <a href="#">
+                    ← Voltar para a cesta
+                </a>
+
+            </div>
+
+
+        </form>
+
+    </body>
+
+</html>
